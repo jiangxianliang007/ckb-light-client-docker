@@ -1,11 +1,10 @@
 FROM ubuntu:20.04
-LABEL maintainer="jxl <jiangxianliang88@gmail.com>"
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends wget apt-utils unzip ca-certificates openssl \
     && rm -rf /var/lib/apt/lists/*
 
-ENV VERSION 0.3.0
+ENV VERSION 0.3.3
 RUN wget https://github.com/nervosnetwork/ckb-light-client/releases/download/v${VERSION}/ckb-light-client_v${VERSION}-x86_64-linux-portable.tar.gz -O /tmp/ckb-light-client.tar.gz
 RUN cd /tmp && tar zxvf ckb-light-client.tar.gz
 RUN cp /tmp/ckb-light-client /bin/ckb-light-client
