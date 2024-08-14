@@ -4,7 +4,7 @@ RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends wget apt-utils unzip ca-certificates openssl \
     && rm -rf /var/lib/apt/lists/*
 
-ENV VERSION 0.3.6
+ENV VERSION 0.3.8
 RUN wget https://github.com/nervosnetwork/ckb-light-client/releases/download/v${VERSION}/ckb-light-client_v${VERSION}-x86_64-linux-portable.tar.gz -O /tmp/ckb-light-client.tar.gz
 RUN cd /tmp && tar zxvf ckb-light-client.tar.gz
 RUN cp /tmp/ckb-light-client /bin/ckb-light-client
