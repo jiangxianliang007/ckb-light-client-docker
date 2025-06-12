@@ -1,6 +1,6 @@
 # ckb-light-client-docker
 
-## download config
+## download testnet config
 ```
 wget https://raw.githubusercontent.com/nervosnetwork/ckb-light-client/develop/config/testnet.toml
 sed -i "s/127.0.0.1:9000/0.0.0.0:9000/" testnet.toml 
@@ -13,7 +13,7 @@ docker run \
  --name ckb-light-client \
  -v $PWD/testnet.toml:/config/testnet.toml \
  -v $PWD/ckb-light-client-data:/data/data/ \
- jiangxianliang/ckb-light-client:v0.2.1 run --config-file /config/testnet.toml
+ jiangxianliang/ckb-light-client:v0.4.1 run --config-file /config/testnet.toml
 ```
 
 ## get_tip_header
